@@ -4,10 +4,7 @@ const cors = require("cors");
 const axios = require("axios");
 const app = express();
 const knex = require("knex")(require("./knexfile"));
-const crypto = require("crypto");
-// const PORT = process.env.PORT;
-const PORT = 8080;
-
+const PORT = process.env.PORT;
 
 app.use(express.json());
 app.use(cors());

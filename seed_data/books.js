@@ -1,10 +1,11 @@
-PORT = 8080;
+require("dotenv").config();
+const PORT = process.env.PORT;
 
 module.exports = [
     {
         id: 1,
         title: "Hedgehog and the maple leaf",
-        image: `http://localhost:8080/images/hedgehog.jpg`,
+        image: `http://localhost:${PORT}/images/hedgehog.jpg`,
         description: "Little hedgehog Greg forgot to wish his mom happy birthday. But he loves his mother very much and he did not want to upset her! How will Greg make up for his blunder and what role will the red maple leaf play in this story? You will learn about it if you read the story of Eva Solska 'Greg and the maple leaf' with amazing illustrations of Katerina Zotova.",
         amazon_link: "https://www.amazon.ca/Hedgehog-Greg-Maple-Leaf-Children-ebook/dp/B081HWTND4/ref=sr_1_1?crid=1C784UHM8F1XC&keywords=Hedgehog+and+the+maple+leaf&qid=1664206354&sprefix=hedgehog+and+the+maple+leaf%2Caps%2C68&sr=8-1",
         sample_link: "/Pdf-sample.pdf",
