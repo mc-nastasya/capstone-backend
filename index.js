@@ -55,6 +55,15 @@ app.get('/books/young-adult', (req, res)=>{
         })
 })
 
+app.get('/faq', (req, res)=> {
+    knex
+        .select("*")
+        .from("faq")
+        .then((data)=>{
+            res.json(data);
+        })
+})
+
 app.post("/email", (req,res)=>{
 
     if(!req.body.email){

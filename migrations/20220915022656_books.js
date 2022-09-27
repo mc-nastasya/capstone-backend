@@ -12,8 +12,8 @@ exports.up = function (knex) {
       })
       .createTable('faq', (table) => {
         table.increments('id').primary();
-        table.string('question').notNullable();
-        table.string('answer').notNullable();
+        table.text('question').notNullable();
+        table.text('answer').notNullable();
         table.timestamp('updated_at').defaultTo(knex.fn.now());
       })
       .createTable('emails', (table)=> {
@@ -33,5 +33,5 @@ exports.up = function (knex) {
   };
   
   exports.down = function (knex) {
-    return knex.schema.dropTable('emails').dropTable('faq').dropTable('books');
+    return knex.schema.dropTable('contact').dropTable('emails').dropTable('faq').dropTable('books');
   };

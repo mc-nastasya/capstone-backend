@@ -91,7 +91,7 @@ module.exports = [
         image: `http://localhost:${PORT}/images/letty.jpg`,
         description: "Letty Gwyngyll lives in a town with the longest name in the world on the Isle of Anglesey in North Wales. She is an orphan found under mysterious circumstances and brought up by a local woman. For her fifteen years of age, Letty is quite an ordinary girl, except perhaps a little bit wild. Everything changes one spring morning when Letty unexpectedly discovers an ability to move with the speed of wind and to understand the language of the trees. Now she has to find out who she really is and what binds her to the ancient order of Druids that mysteriously disappeared from the island many centuries ago…",
         amazon_link: "https://www.amazon.ca/Hedgehog-Greg-Maple-Leaf-Children-ebook/dp/B081HWTND4/ref=sr_1_1?crid=1C784UHM8F1XC&keywords=Hedgehog+and+the+maple+leaf&qid=1664206354&sprefix=hedgehog+and+the+maple+leaf%2Caps%2C68&sr=8-1",
-        sample_link: "hello.com",
+        sample_link: "/Pdf-sample.pdf",
         age: "young-adult"
     }
 ]
