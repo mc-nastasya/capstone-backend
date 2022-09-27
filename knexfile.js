@@ -4,7 +4,7 @@ module.exports = {
     host: '127.0.0.1',
     user: 'root',
     password: 'rootroot',
-    database: 'evasolska1',
+    database: 'evasolska2',
     charset: 'utf8',
   },
 };
