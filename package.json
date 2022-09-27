@@ -9,17 +9,20 @@
     "migrate:down": "knex migrate:down",
     "migrate:rollback": "knex migrate:rollback",
     "seed": "knex seed:run",
-    "start": "npx nodemon index.js"
+    "start": "npx nodemon index.js",
+    "key": "node -e \"console.log(require('crypto').randomBytes(32).toString('hex'));\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
     "knex": "^2.3.0",
     "mysql2": "^2.3.3"
   }

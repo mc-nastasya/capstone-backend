@@ -1,10 +1,16 @@
 require("dotenv").config();
+const jwt = require('jsonwebtoken');
 const express = require('express');
 const cors = require("cors");
 const axios = require("axios");
 const app = express();
 const knex = require("knex")(require("./knexfile"));
 const PORT = process.env.PORT;
+const JWT_KEY = process.env.JWT_KEY;
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
+
 
 app.use(express.json());
 app.use(cors());
@@ -120,6 +126,32 @@ app.post("/contact", (req, res)=>{
             res.status(201).json("Ok");
         })
     
+})
+
+
+app.post('/login', (req, res)=>{
+    const {username, password} = req.body;
+
+    knex
+        .select("*")
+        .from("admin")
+        .then((data)=>{
+            return user = data[0];
+        })
+        .then((user)=>{
+            if(username === user.username){
+                bcrypt.compare(password, user.password, (err, result)=>{
+                    if(result) {
+                        res.status(200).json({token: jwt.sign({username: username}, JWT_KEY)});
+                    } else {
+                        res.status(403).json({token: '', error: {message:"Error logging in. Invalid username/password combination."}})
+                    }
+                })
+            }
+            else {
+                res.status(403).json({token: '', error: {message:"Error logging in. Invalid username/password combination."}})
+            }
+        })
 })
 
 app.listen(PORT, () => {

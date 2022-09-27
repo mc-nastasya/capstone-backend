@@ -29,9 +29,15 @@ exports.up = function (knex) {
         table.text('subject').notNullable();
         table.text('message').notNullable();
         table.timestamp('updated_at').defaultTo(knex.fn.now());
+      })
+      .createTable('admin', (table)=>{
+        table.increments('id').primary();
+        table.string('username').notNullable();
+        table.string('password').notNullable();
+        table.timestamp('updated_at').defaultTo(knex.fn.now());
       });
   };
   
   exports.down = function (knex) {
-    return knex.schema.dropTable('contact').dropTable('emails').dropTable('faq').dropTable('books');
+    return knex.schema.dropTable('admin').dropTable('contact').dropTable('emails').dropTable('faq').dropTable('books');
   };
