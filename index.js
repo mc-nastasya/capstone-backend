@@ -177,7 +177,7 @@ app.post('/add-book', (req, res)=>{
             description: req.body.description, 
             amazon_link: req.body.amazon_link, 
             age: req.body.age,
-            image: "http://localhost:8080/images/default.jpg",
+            image: `http://localhost:${PORT}/images/default.jpg`,
             sample_link: "/Pdf-sample.pdf"  
         }
     ]) .then(()=>{
