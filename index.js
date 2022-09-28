@@ -154,6 +154,37 @@ app.post('/login', (req, res)=>{
         })
 })
 
+app.post('/add-book', (req, res)=>{
+    if(!req.body.title){
+        res.status(400).send({error: "Enter title"})
+        return ;
+    }
+
+    if(!req.body.description){
+        res.status(400).send({error: "Enter description"})
+        return ;
+    }
+
+    if(!req.body.amazon_link){
+        res.status(400).send({error: "Enter amazon link"})
+        return ;
+    }
+
+    knex("books")
+    .insert([
+        { 
+            title: req.body.title, 
+            description: req.body.description, 
+            amazon_link: req.body.amazon_link, 
+            age: req.body.age,
+            image: "http://localhost:8080/images/default.jpg",
+            sample_link: "/Pdf-sample.pdf"  
+        }
+    ]) .then(()=>{
+        res.status(201).json("Ok");
+    })
+})
+
 app.listen(PORT, () => {
     console.log(`🚀 Server listening on http://localhost:${PORT}`);
 })
