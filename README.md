@@ -29,7 +29,7 @@ I made the site because I myself am part of these books. The writer is a friend 
 - Fill the form to contact the author
 - Buy book on Amazon
 - Read a sample of the book
-- "/admin" path gives an opportunity to author to add a new book to website after logged in
+- "/admin" path gives an opportunity to author to add a new book to website after logged in (username: admin, password: admin)
 ## Installation
 - ### Client Side
     Clone this repo
